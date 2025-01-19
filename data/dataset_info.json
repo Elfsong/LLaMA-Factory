@@ -632,5 +632,59 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "venus_runtime_sft": {
+    "hf_hub_url": "Elfsong/Venus_SFT",
+    "split": "runtime",
+    "columns": {
+        "prompt": "input",
+        "response": "output"
+    }
+  },
+  "venus_memory_sft": {
+    "hf_hub_url": "Elfsong/Venus_SFT",
+    "split": "memory",
+    "columns": {
+        "prompt": "input",
+        "response": "output"
+    }
+  },
+  "venus_runtime_dpo": {
+    "hf_hub_url": "Elfsong/Venus_DPO",
+    "split": "runtime",
+    "ranking": true,
+    "columns": {
+        "prompt": "input",
+        "chosen": "chosen",
+        "rejected": "rejected"
+    }
+  },
+  "venus_memory_dpo": {
+    "hf_hub_url": "Elfsong/Venus_DPO",
+    "split": "memory",
+    "ranking": true,
+    "columns": {
+        "prompt": "input",
+        "chosen": "chosen",
+        "rejected": "rejected"
+    }
+  },
+  "venus_runtime_kto": {
+    "hf_hub_url": "Elfsong/Venus_KTO",
+    "split": "runtime",
+    "columns": {
+      "prompt": "input",
+      "response": "output",
+      "kto_tag": "label"
+    }
+  },
+  "venus_memory_kto": {
+    "hf_hub_url": "Elfsong/Venus_KTO",
+    "split": "memory",
+    "columns": {
+      "prompt": "input",
+      "response": "output",
+      "kto_tag": "label"
+    }
   }
 }

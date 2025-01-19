@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: /mnt/hdfs/tiktok_aiic/user/liuqian/Meta-Llama-3.1-8B-Instruct
+model_name_or_path: meta-llama/Llama-3.1-8B-Instruct
 
 ### method
 stage: sft
@@ -15,7 +15,7 @@ overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: /mnt/hdfs/tiktok_aiic/user/liuqian/mingzhe_checkpoints/llama3_1_8b_full_0119_sft_ds3_2e-6
+output_dir: {root_path}/mingzhe_checkpoints/llama3_1_8b_full_0119_sft_ds3_2e-6
 logging_steps: 10
 save_steps: 1000
 plot_loss: true

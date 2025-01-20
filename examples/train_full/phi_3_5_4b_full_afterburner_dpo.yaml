@@ -1,29 +1,33 @@
 ### model
-model_name_or_path: meta-llama/Llama-3.3-70B-Instruct
+model_name_or_path: microsoft/Phi-3.5-mini-instruct
 
 ### method
-stage: sft
+stage: dpo
 do_train: true
 finetuning_type: full
-deepspeed: examples/deepspeed/ds_z3_config.json
+# finetuning_type: lora
+# lora_rank: 8
+# lora_target: all
+pref_beta: 0.1
+pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: venus_runtime_sft, venus_memory_sft
-template: llama3
+dataset: venus_runtime_dpo, venus_memory_dpo
+template: default
 max_samples: 50000
 cutoff_len: 4096
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: {root_path}/mingzhe_checkpoints/llama3_3_70b_full_0120_sft_ds3_2e-6
+output_dir: {root_path}/mingzhe_checkpoints/phi_3_5_4b_0120_dpo_ds3_2e-6
 logging_steps: 10
 save_steps: 500
 plot_loss: true
 overwrite_output_dir: true
 
 ### train
-per_device_train_batch_size: 4
+per_device_train_batch_size: 2
 gradient_accumulation_steps: 4
 learning_rate: 2.0e-6
 num_train_epochs: 1.0
